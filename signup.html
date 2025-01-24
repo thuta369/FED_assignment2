@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+    <title>Mokesell | Sign Up</title>
+</head>
+<body>
+    <!--Header section with logo-->
+    <header>
+        <div class="logo-container">
+            <img src="mokesell_logo.png" alt="Mokesell Logo">
+        </div>
+    </header>
+
+    <!-- Sign-Up Form Section -->
+    <section class="signup-container">
+        <h1>Sign Up</h1>
+        <form action="/register" method="POST">
+            <fieldset>
+                <legend>Account Details</legend>
+                <label for="name">Full Name</label>
+                <input type="text" id="name" name="name" placeholder="Enter your full name" required>
+                
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" placeholder="Enter your email" required>
+                
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" placeholder="Create a password" required>
+                
+                <label for="confirm-password">Confirm Password</label>
+                <input type="password" id="confirm-password" name="confirm-password" placeholder="Confirm your password" required>
+            </fieldset>
+            
+            <button type="submit" class="btn">Sign Up</button>
+            <p class="signin-text">Already have an account? <a href="signin.html">Sign In</a></p>
+        </form>
+    </section>
+</body>
+</html>
