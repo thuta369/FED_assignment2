@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="logins.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
     <title>Mokesell | Sign In</title>
 </head>
@@ -16,7 +16,7 @@
     </header>
 
     <!-- Sign-In Form Section -->
-    <section class="signin-container">
+    <section class="container">
         <h1>Sign In</h1>
         <form action="/login" method="POST">
             <fieldset>
@@ -26,8 +26,10 @@
                 <label for="password">Password</label>
                 <input type="password" id="password" name="password" placeholder="Enter your password" required>
             </fieldset>
-            <button type="submit" class="btn">Sign In</button>
-            <p class="signup-text">Don't have an account? <a href = "signup.html">Sign Up</a></p>
+            <a href="homepage(after_login).html">
+                <button type="button" class="btn">Sign In</button>
+            </a>
+            <p class="logins-text">Don't have an account? <a href = "signup.html">Sign Up</a></p>
         </form>
     </section>
 </body>
