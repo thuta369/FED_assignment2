@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mokesell | Chats</title>
+    <link rel="stylesheet" href="chats.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <div class="left-nav">
+            <a href="#">Buy</a>
+            <a href="listing.html">Sell</a>
+        </div>
+        <a href="homepage(after_login).html" class="logo-container">
+            <img src="mokesell_logo.png" alt="Mokesell Logo">
+        </a>
+        <div class="right-nav">
+            <a href="#"><i class="fas fa-bell"></i></a> <!-- Notification Icon -->
+            <a href="#"><i class="fas fa-comment"></i></a> <!-- Chat Icon -->
+            <a href="favourites.html"><i class="fas fa-heart"></i></a> <!-- Favorites Icon -->
+            <a href="#"><i class="fas fa-shopping-cart"></i></a> <!-- Cart Icon -->
+            <div class="user-profile">
+                <i class="fas fa-user-circle"></i>
+                <span>Name <i class="fas fa-caret-down"></i></span>
+            </div>
+        </div>
+
+        <div class="search-bar">
+            <input type="text" placeholder="Search">
+        </div>
+    </header>   
+
+    <!-- Chat Section -->
+    <main class="chat-container">
+        <aside class="chat-list">
+            <header>
+                <h2>Chats</h2>
+                <input type="text" placeholder="Search chats" class="search-bar" aria-label="Search Chats">
+            </header>
+            <ul id="chat-items">
+                <li class="chat-item" onclick="openChat('Username', 'Product name')">
+                    <figure class="profile-pic"></figure>
+                    <article class="chat-info">
+                        <p class="chat-username">Username</p>
+                        <p class="chat-product">Product Listing</p>
+                    </article>
+                </li>
+                <!-- Add more chat items dynamically -->
+            </ul>
+        </aside>
+        <section class="chat-window">
+            <header id="chat-header" class="chat-header">
+                <figure class="profile-pic large"></figure>
+                <div>
+                    <p id="chat-username" class="username">Username</p>
+                    <p id="chat-status" class="status">Online X mins ago</p>
+                    <p id="chat-product" class="product">Product Name</p>
+                </div>
+            </header>
+            <section id="chat-messages" class="chat-messages">
+                <!-- Chat messages will load here -->
+            </section>
+            <footer class="input-bar">
+                <input type="text" id="message-input" placeholder="Type your message" aria-label="Type your message">
+                <button onclick="sendMessage()">Send</button>
+            </footer>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
