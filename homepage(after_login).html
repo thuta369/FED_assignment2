@@ -20,8 +20,8 @@
         <div class="right-nav">
             <a href="#"><i class="fas fa-bell"></i></a> <!-- Notification Icon -->
             <a href="chats.html"><i class="fas fa-comment"></i></a> <!-- Chat Icon -->
-            <a href="#"><i class="fas fa-heart"></i></a> <!-- Favorites Icon -->
-            <a href="#"><i class="fas fa-shopping-cart"></i></a> <!-- Cart Icon -->
+            <a href="favourites.html"><i class="fas fa-heart"></i></a> <!-- Favorites Icon -->
+            <a href="cart.html"><i class="fas fa-shopping-cart"></i></a> <!-- Cart Icon -->
             <div class="user-profile">
                 <i class="fas fa-user-circle"></i>
                 <span>Name <i class="fas fa-caret-down"></i></span>
@@ -34,6 +34,44 @@
     </header>    
     
     <main>
+        <section class="ad-layout">
+            <!-- Fixed Images Section -->
+            <div class="fixed-images">
+                <div class="fixed-image">
+                    <img src="testimage2.jpeg" alt="Fixed Ad 1">
+                </div>
+                <div class="fixed-image">
+                    <img src="https://via.placeholder.com/150x300?text=Fixed+2" alt="Fixed Ad 2">
+                </div>
+            </div>
+        
+            <!-- Scrollable Ad Section -->
+            <div class="scrollable-section">
+                <button class="arrow left-arrow">&lt;</button>
+                <div class="ad-container">
+                    <div class="ad-card">
+                        <img src="testimage.jpg" alt="Ad 1">
+                    </div>
+                    <div class="ad-card">
+                        <img src="https://via.placeholder.com/400x200?text=Ad+2" alt="Ad 2">
+                    </div>
+                    <div class="ad-card">
+                        <img src="https://via.placeholder.com/400x200?text=Ad+3" alt="Ad 3">
+                    </div>
+                    <div class="ad-card">
+                        <img src="https://via.placeholder.com/400x200?text=Ad+4" alt="Ad 4">
+                    </div>
+                </div>
+                <button class="arrow right-arrow">&gt;</button>
+                <div class="navigation-dots">
+                    <span class="dot active"></span>
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                </div>
+            </div>
+        </section>
+    
         <section class="categories">
             <h2>Categories</h2>
             <div class="grid">
@@ -151,5 +189,7 @@
           </nav>
         </div>
     </footer>
+
+    <script src="script.js"></script>
 </body>
 </html>

@@ -6,12 +6,19 @@
 }
 
 /* Body Styling */
+html, body {
+    height: 100%; /* Ensure the body takes full height */
+    display: flex;
+    flex-direction: column; /* Stack content vertically */
+}
+
 body {
     font-family: 'Inter', sans-serif;
     background-color: white;
     color: #333;
     line-height: 1.6;
     margin: 0;
+    overflow-y: scroll;
 }
 
 /* HOMEPAGE BEFORE LOG IN */
@@ -144,172 +151,50 @@ header {
     color: #555;
 }
 
-/* Overall Layout */
-.ad-layout {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 20px;
-    padding: 20px;
-}
-
-/* Fixed Images Section */
-.fixed-images {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-}
-
-.fixed-image img {
-    width: 150px;
-    height: 300px;
-    object-fit: cover;
-    border: 1px solid #ccc;
-    border-radius: 8px;
-}
-
-/* Scrollable Section */
-.scrollable-section {
-    position: relative;
-    width: 400px;
-    overflow: hidden;
-}
-
-.ad-container {
-    display: flex;
-    transition: transform 0.5s ease-in-out;
-}
-
-.ad-card {
-    min-width: 100%;
-}
-
-.ad-card img {
-    width: 100%;
-    height: 200px;
-    object-fit: cover;
-    border-radius: 8px;
-}
-
-/* Navigation Arrows */
-.arrow {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background: rgba(0, 0, 0, 0.5);
-    color: white;
-    border: none;
-    font-size: 2rem;
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-    z-index: 2;
-}
-
-.left-arrow {
-    left: 10px;
-}
-
-.right-arrow {
-    right: 10px;
-}
-
-.arrow:hover {
-    background: rgba(0, 0, 0, 0.7);
-}
-
-/* Navigation Dots */
-.navigation-dots {
-    display: flex;
-    justify-content: center;
-    margin-top: 10px;
-    gap: 5px;
-}
-
-.dot {
-    width: 10px;
-    height: 10px;
-    background: gray;
-    border-radius: 50%;
-    cursor: pointer;
-}
-
-.dot.active {
-    background: black;
-}
-
-/* Section Styling */
 main {
+    max-width: 800px;
+    margin: 20px auto;
+    background: #fff;
     padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    flex-grow: 1; /* This will allow the main content area to grow and push the footer down */
 }
 
-h2 {
-    font-size: 30px;
-    margin-bottom: 15px;
-    color: #003049;
-}
-
-/* Grid Styles */
-.grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 15px;
-    margin-bottom: 30px;
-}
-
-.box {
-    height: 100px;
-    background-color: #003049;
-    border-radius: 10px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
-}
-
-/* Flex Styles */
-.flex {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    margin-bottom: 30px;
-}
-
-.feature-box {
-    background-color: #003049;
-    padding: 20px;
-    border-radius: 15px;
-    text-align: center;
-    width: 150px;
-    height: 150px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
-}
-
-/* Centering Section Headings */
-.sell-buy h2,
-.community h2 {
+main h1 {
     text-align: center;
     margin-bottom: 20px;
 }
 
-/* Community Section */
-.all-testimonials {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
-    margin-bottom: 30px;
+.cart-section table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
 }
 
-.testimonial {
-    padding: 20px;
-    border-radius: 10px;
-    text-align: center;
-    box-shadow: none; 
+.cart-section th, .cart-section td {
+    padding: 15px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+.cart-summary {
+    text-align: right;
+    font-size: 1.2em;
+    margin-top: 20px;
+}
+
+.checkout-btn {
+    padding: 10px 20px;
+    color: #fff;
+    background-color: #007bff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.checkout-btn:hover {
+    background-color: #0056b3;
 }
 
 /* Footer Styles */
@@ -320,6 +205,7 @@ h2 {
     padding: 20px;
     background-color: #FFC857;
     color: #003049;
+    margin-top: auto; /* Ensures footer stays at the bottom of the page */
 }
   
 .footer-section h4 {
@@ -423,8 +309,3 @@ h2 {
         align-items: flex-start;
     }
 }
-
-
-
-
-
