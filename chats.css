@@ -54,7 +54,7 @@ header {
 .left-nav a:hover {
     color: #FFC857; /* Change to your desired hover color */
     background-color: #003049; /* Optional: Add background color */
-    border-radius: 20px; /* Optional: Rounded corners on hover */
+    border-radius: 30px; /* Optional: Rounded corners on hover */
 }
 
 .right-nav {
@@ -268,15 +268,54 @@ header {
     font-weight: bold;
 }
 
-.chat-header .status, .chat-header .product {
+.chat-header .status {
     font-size: 14px;
     color: #666;
+}
+
+.chat-header .product-info {
+    display: flex;
+    gap: 10px; /* Add space between product name and price */
+    align-items: center; /* Vertically center the text */
+}
+
+.chat-header .product {
+    font-size: 16px;
+    font-weight: bold;
+    color: #333;
+}
+
+.chat-header .price {
+    font-size: 16px;
+    font-weight: bold;
+    color: #FF5733; /* You can change this to your preferred color */
 }
 
 .chat-messages {
     flex: 1;
     padding: 15px;
     overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.message-you {
+    background-color: #F4E1B7;
+    color: black;
+    padding: 10px;
+    border-radius: 20px;
+    align-self: flex-end; /* Align buyer's messages to the right */
+    max-width: 80%;
+}
+
+.message-other {
+    background-color: #F4E1B7;
+    color: black;
+    padding: 10px;
+    border-radius: 20px;
+    align-self: flex-start; /* Align seller's messages to the left */
+    max-width: 80%;
 }
 
 .input-bar {
@@ -311,4 +350,3 @@ header {
     background-color: white;
     color: #003049;
 }
-

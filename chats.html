@@ -42,14 +42,7 @@
                 <input type="text" placeholder="Search chats" class="search-bar" aria-label="Search Chats">
             </header>
             <ul id="chat-items">
-                <li class="chat-item" onclick="openChat('Username', 'Product name')">
-                    <figure class="profile-pic"></figure>
-                    <article class="chat-info">
-                        <p class="chat-username">Username</p>
-                        <p class="chat-product">Product Listing</p>
-                    </article>
-                </li>
-                <!-- Add more chat items dynamically -->
+                <!-- Chat list will be populated dynamically by JavaScript -->
             </ul>
         </aside>
         <section class="chat-window">
@@ -58,11 +51,14 @@
                 <div>
                     <p id="chat-username" class="username">Username</p>
                     <p id="chat-status" class="status">Online X mins ago</p>
-                    <p id="chat-product" class="product">Product Name</p>
+                    <div id="chat-product-info" class="product-info">
+                        <p id="chat-product" class="product">Product Name</p>
+                        <p id="chat-price" class="price">$0.00</p> <!-- Price Element -->
+                    </div>
                 </div>
             </header>
             <section id="chat-messages" class="chat-messages">
-                <!-- Chat messages will load here -->
+                <p>Select a chat to see the messages</p> <!-- Placeholder text -->
             </section>
             <footer class="input-bar">
                 <input type="text" id="message-input" placeholder="Type your message" aria-label="Type your message">
@@ -71,7 +67,7 @@
         </section>
     </main>
 
-    <script src="script.js"></script>
+    <script src="chats.js"></script>
 </body>
 </html>
 

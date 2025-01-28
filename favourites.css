@@ -5,11 +5,13 @@
     box-sizing: border-box;
 }
 
+/* BODY STYLING */
 body {
     font-family: 'Inter', sans-serif;
     background-color: #F9F9F9;
     color: #333;
     line-height: 1.6;
+    margin: 0;
 }
 
 /* Header Styling */
@@ -45,8 +47,14 @@ header {
     color: #FFFFFF;
     font-weight: bold;
     font-size: 20px;
+    padding: 10px;
 }
 
+.left-nav a:hover {
+    color: #FFC857; /* Change to your desired hover color */
+    background-color: #003049; /* Optional: Add background color */
+    border-radius: 30px; /* Optional: Rounded corners on hover */
+}
 
 .right-nav {
     display: flex;
@@ -61,6 +69,10 @@ header {
     color: #FFFFFF;
     font-weight: bold;
     font-size: 20px;
+}
+
+.right-nav a:hover {
+    color: #003049;
 }
 
 .right-nav button {
@@ -163,7 +175,7 @@ hr {
 /* Footer Styles */
 .footer {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     gap: 20px;
     padding: 20px;
     background-color: #FFC857;
@@ -230,6 +242,7 @@ hr {
   
 .footer-bottom nav {
     display: flex;
+    flex-wrap: wrap;
     gap: 10px;
 }
   
@@ -240,6 +253,34 @@ hr {
   
 .footer-bottom a:hover {
     text-decoration: underline;
+}
+
+/* Styling for Payment and Delivery Icons */
+.payment-icons i,
+.delivery-icons i {
+    font-size: 2rem; /* Icon size */
+    margin-right: 15px; /* Space between icons */
+    color: #003049; /* Icon color */
+}
+
+/* QR Code Placeholder */
+.qr-code {
+    width: 50px;
+    height: 50px;
+    background-color: #f4f4f4;
+    border: 2px dashed #ccc;
+    border-radius: 5px;
+}
+
+/* App Store Button */
+.app-store {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #003049;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
 }
   
 /* Responsive Styles */
