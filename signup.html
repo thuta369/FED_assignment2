@@ -3,9 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="logins.css">
+    <link rel="stylesheet" href="signup.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
     <title>Mokesell | Sign Up</title>
+    <style>
+        body {
+            overflow-y: auto; /* Enable vertical scrolling */
+        }
+    </style>
 </head>
 <body>
     <!--Header section with logo-->
@@ -29,14 +34,25 @@
                 
                 <label for="password">Password</label>
                 <input type="password" id="password" name="password" placeholder="Create a password" required>
+                <div id="password-strength-text">Password strength: <span id="password-strength-label">Weak</span></div>
+                <div id="password-strength-bar"></div>
+                <ul id="password-requirements">
+                    <li id="char-count" class="invalid">At least 8 characters</li>
+                    <li id="number-check" class="invalid">Contains a number</li>
+                    <li id="special-char-check" class="invalid">Contains a special character</li>
+                    <li id="uppercase-check" class="invalid">Contains an uppercase letter</li>
+                </ul>
+                <br>
                 
                 <label for="confirm-password">Confirm Password</label>
                 <input type="password" id="confirm-password" name="confirm-password" placeholder="Confirm your password" required>
             </fieldset>
             
-            <button type="submit" class="btn">Sign Up</button>
+            <button type="submit" class="btn" formaction="homepage(after_login).html">Sign Up</button>
             <p class="signin-text">Already have an account? <a href="signin.html">Sign In</a></p>
         </form>
     </section>
+
+    <script src="signup.js"></script>
 </body>
 </html>

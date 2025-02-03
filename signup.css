@@ -10,13 +10,14 @@
 html, body {
     font-family: 'Inter', sans-serif;
     background-color: #003049; 
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: flex-start;
-    height: 100%;
+    display: block; /* Prevent flexbox from affecting layout */
+    width: 100vw; /* Ensure full width */
+    height: 100vh; /* Ensure full height */
     color: #f1faee; 
-    overflow-x: hidden; 
+    overflow-x: hidden; /* Prevent horizontal scrolling */
+    overflow-y: auto; /* Allow vertical scrolling */
+    margin: 0;
+    padding: 0;
 }
 
 /* Logo Rectangle Background */
@@ -179,15 +180,16 @@ header img {
 
 /* Sign-Up Container */
 .signup-container {
-    background-color: #f1faee; 
+    background-color: #f1faee;
     padding: 3rem;
     border-radius: 40px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
-    width: 500px; 
+    width: 500px;
     text-align: center;
     margin-top: 80px; 
-    z-index: 1;
+    max-width: 100%; /* Prevent unwanted width issues */
 }
+
 
 /* Title Styling */
 h1 {
@@ -270,5 +272,72 @@ button.btn:hover {
 .signin-text a:hover {
     text-decoration: underline;
 }
+
+/* Password strength section */
+#password-strength-text {
+    font-size: 14px;
+    margin-top: 5px;
+    color: #666;
+}
+
+#password-strength-label {
+    font-weight: bold;
+    color: red;
+}
+
+/* Password strength progress bar */
+#password-strength-bar {
+    height: 4px;
+    width: 100%;
+    background-color: #ddd;
+    margin-top: 5px;
+    border-radius: 4px;
+    transition: width 0.3s ease-in-out;
+}
+
+.weak {
+    background-color: red;
+    width: 25%;
+}
+
+.medium {
+    background-color: orange;
+    width: 50%;
+}
+
+.strong {
+    background-color: green;
+    width: 100%;
+}
+
+/* Password requirements */
+#password-requirements {
+    list-style-type: none;
+    padding: 0;
+    margin-top: 5px;
+    font-size: 13px;
+    color: #666;
+}
+
+#password-requirements li {
+    padding-left: 20px;
+    position: relative;
+}
+
+#password-requirements li::before {
+    content: "•";
+    color: gray;
+    position: absolute;
+    left: 0;
+}
+
+.valid {
+    color: green;
+}
+
+.invalid {
+    color: red;
+}
+
 
 

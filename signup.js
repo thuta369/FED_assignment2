@@ -1,63 +1,64 @@
-document.addEventListener("DOMContentLoaded", () => {
+document.addEventListener("DOMContentLoaded", function () {
     const passwordInput = document.getElementById("password");
-    const togglePassword = document.querySelector(".toggle-password");
-    const passwordStrengthBar = document.querySelector(".strength-progress");
-    const strengthValue = document.getElementById("strength-value");
-    const signupForm = document.getElementById("signupForm");
-    const locationInput = document.getElementById("location");
-    const detectLocationBtn = document.querySelector(".detect-location");
+    const strengthLabel = document.getElementById("password-strength-label");
+    const strengthBar = document.getElementById("password-strength-bar");
 
-    // Toggle Password Visibility
-    togglePassword.addEventListener("click", () => {
-        passwordInput.type = passwordInput.type === "password" ? "text" : "password";
+    // Validation elements
+    const charCount = document.getElementById("char-count");
+    const numberCheck = document.getElementById("number-check");
+    const specialCharCheck = document.getElementById("special-char-check");
+    const uppercaseCheck = document.getElementById("uppercase-check");
+
+    passwordInput.addEventListener("input", function () {
+        const password = passwordInput.value;
+        const strength = checkPasswordStrength(password);
+
+        // Reset classes
+        strengthBar.className = "";
+
+        // Apply strength class based on score
+        if (strength === "weak") {
+            strengthBar.classList.add("weak");
+            strengthLabel.textContent = "Weak";
+            strengthLabel.style.color = "red";
+        } else if (strength === "medium") {
+            strengthBar.classList.add("medium");
+            strengthLabel.textContent = "Medium";
+            strengthLabel.style.color = "orange";
+        } else if (strength === "strong") {
+            strengthBar.classList.add("strong");
+            strengthLabel.textContent = "Strong";
+            strengthLabel.style.color = "green";
+        }
+
+        // Update validation checklist
+        updateValidation(password);
     });
 
-    // Password Strength Checker
-    passwordInput.addEventListener("input", () => {
-        const value = passwordInput.value;
+    function checkPasswordStrength(password) {
         let strength = 0;
 
-        if (value.length >= 8) strength++;
-        if (/\d/.test(value)) strength++;
-        if (/[A-Z]/.test(value)) strength++;
-        if (/[!@#$%^&*]/.test(value)) strength++;
+        if (password.length >= 8) strength++;  // Minimum length check
+        if (/[A-Z]/.test(password)) strength++; // Uppercase letter check
+        if (/[0-9]/.test(password)) strength++; // Number check
+        if (/[\W]/.test(password)) strength++; // Special character check
 
-        const strengthLevels = ["Weak", "Fair", "Good", "Strong"];
-        passwordStrengthBar.style.width = `${strength * 25}%`;
-        strengthValue.textContent = strengthLevels[strength - 1] || "Weak";
-        passwordStrengthBar.className = `strength-progress ${strengthLevels[strength - 1].toLowerCase()}`;
-    });
+        if (strength <= 1) return "weak";
+        if (strength === 2) return "medium";
+        return "strong";
+    }
 
-    // Detect User Location
-    detectLocationBtn.addEventListener("click", async () => {
-        if (navigator.geolocation) {
-            navigator.geolocation.getCurrentPosition(async (position) => {
-                const { latitude, longitude } = position.coords;
-                const response = await fetch(`https://nominatim.openstreetmap.org/reverse?lat=${latitude}&lon=${longitude}&format=json`);
-                const data = await response.json();
-                locationInput.value = data.display_name || "Location not found";
-            }, () => {
-                alert("Could not detect location. Please enter manually.");
-            });
-        } else {
-            alert("Geolocation is not supported by your browser.");
-        }
-    });
+    function updateValidation(password) {
+        charCount.classList.toggle("valid", password.length >= 8);
+        charCount.classList.toggle("invalid", password.length < 8);
 
-    // Form Submission (Simulated API Call)
-    signupForm.addEventListener("submit", async (event) => {
-        event.preventDefault();
+        numberCheck.classList.toggle("valid", /\d/.test(password));
+        numberCheck.classList.toggle("invalid", !/\d/.test(password));
 
-        const formData = {
-            fullName: document.getElementById("fullName").value,
-            email: document.getElementById("email").value,
-            password: passwordInput.value,
-            location: locationInput.value,
-            phone: document.getElementById("phone").value,
-            termsAccepted: document.getElementById("terms").checked
-        };
+        specialCharCheck.classList.toggle("valid", /[\W]/.test(password));
+        specialCharCheck.classList.toggle("invalid", !/[\W]/.test(password));
 
-        console.log("Submitting form data:", formData);
-        alert("Form submitted successfully!");
-    });
+        uppercaseCheck.classList.toggle("valid", /[A-Z]/.test(password));
+        uppercaseCheck.classList.toggle("invalid", !/[A-Z]/.test(password));
+    }
 });
