@@ -35,38 +35,35 @@
     </header>   
 
     <!-- Chat Section -->
-    <main class="chat-container">
+    <div class="chat-container">
+        <!-- Chat List Sidebar -->
         <aside class="chat-list">
-            <header>
-                <h2>Chats</h2>
-                <input type="text" placeholder="Search chats" class="search-bar" aria-label="Search Chats">
-            </header>
-            <ul id="chat-items">
-                <!-- Chat list will be populated dynamically by JavaScript -->
-            </ul>
+            <h2>Chats</h2>
+            <nav class="chat-items" id="chatList">
+                <!-- Chat items will be inserted here by JavaScript -->
+            </nav>
         </aside>
+    
+        <!-- Chat Window -->
         <section class="chat-window">
-            <header id="chat-header" class="chat-header">
-                <figure class="profile-pic large"></figure>
-                <div>
-                    <p id="chat-username" class="username">Username</p>
-                    <p id="chat-status" class="status">Online X mins ago</p>
-                    <div id="chat-product-info" class="product-info">
-                        <p id="chat-product" class="product">Product Name</p>
-                        <p id="chat-price" class="price">$0.00</p> <!-- Price Element -->
-                    </div>
-                </div>
+            <!-- Chat Header -->
+            <header class="chat-header" id="chatHeader">
+                <p class="no-chat-selected">Select a chat to start messaging</p>
             </header>
-            <section id="chat-messages" class="chat-messages">
-                <p>Select a chat to see the messages</p> <!-- Placeholder text -->
-            </section>
-            <footer class="input-bar">
-                <input type="text" id="message-input" placeholder="Type your message" aria-label="Type your message">
+    
+            <!-- Messages Container -->
+            <main class="messages" id="messages">
+                <!-- Messages will be inserted here by JavaScript -->
+            </main>
+    
+            <!-- Message Input -->
+            <footer class="message-input">
+                <input type="text" id="messageInput" placeholder="Type a message...">
                 <button onclick="sendMessage()">Send</button>
             </footer>
         </section>
-    </main>
-
+    </div>
+    
     <script src="chats.js"></script>
 </body>
 </html>

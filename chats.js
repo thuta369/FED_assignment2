@@ -1,110 +1,154 @@
-// Simulate chat data
-const chatData = [
+// Sample data for chats
+const chats = [
     {
-        username: "Alice",
-        product: "Vintage Watch",
-        status: "Online 10 mins ago",
-        price: "$500" ,
-        messages: [
-            { sender: "Alice", message: "Hey, is the watch still available?" },
-            { sender: "You", message: "Yes, it's still available!" }
-        ]
+        id: 1,
+        username: "Sarah Parker",
+        profilePic: "https://i.pravatar.cc/150?img=1",
+        item: "Vintage Camera",
+        price: "$299",
+        messages: []
     },
     {
-        username: "Bob",
-        product: "Old Camera",
-        price: "$150",
-        status: "Offline 2 hours ago",
-        messages: [
-            { sender: "Bob", message: "Can you send more pictures?" },
-            { sender: "You", message: "Sure! I will send them shortly." }
-        ]
+        id: 2,
+        username: "Mike Johnson",
+        profilePic: "https://i.pravatar.cc/150?img=2",
+        item: "Mountain Bike",
+        price: "$450",
+        messages: []
+    },
+    {
+        id: 3,
+        username: "Emma Wilson",
+        profilePic: "https://i.pravatar.cc/150?img=3",
+        item: "Guitar",
+        price: "$199",
+        messages: []
     }
 ];
 
-// Variables for dynamically updating chat content
-const chatList = document.getElementById('chat-items');
-const chatMessagesSection = document.getElementById('chat-messages');
-const chatUsername = document.getElementById('chat-username');
-const chatProduct = document.getElementById('chat-product');
-const chatStatus = document.getElementById('chat-status');
-const messageInput = document.getElementById('message-input');
+let currentChat = null;
 
-// Function to load the chat list dynamically
-function loadChatList() {
-    chatList.innerHTML = ''; // Clear the list before loading new items
+// Initialize chat list
+function initializeChatList() {
+    const chatList = document.getElementById('chatList');
+    chatList.innerHTML = '';
 
-    chatData.forEach((chat, index) => {
-        const chatItem = document.createElement('li');
-        chatItem.classList.add('chat-item');
-        chatItem.setAttribute('onclick', `openChat(${index})`);
-
+    chats.forEach(chat => {
+        const chatItem = document.createElement('div');
+        chatItem.className = 'chat-item';
+        chatItem.onclick = () => selectChat(chat);
+        
         chatItem.innerHTML = `
-            <figure class="profile-pic"></figure>
-            <article class="chat-info">
-                <p class="chat-username">${chat.username}</p>
-                <p class="chat-product">${chat.product}</p>
-            </article>
+            <img src="${chat.profilePic}" alt="${chat.username}">
+            <div class="chat-item-info">
+                <div class="chat-item-header">
+                    <span class="username">${chat.username}</span>
+                    <span class="price">${chat.price}</span>
+                </div>
+                <div class="item-name">${chat.item}</div>
+            </div>
         `;
-
+        
         chatList.appendChild(chatItem);
     });
 }
 
-// Function to open a specific chat
-function openChat(chatIndex) {
-    const selectedChat = chatData[chatIndex];
-
-    // Update chat header information
-    chatUsername.textContent = selectedChat.username;
-    chatProduct.textContent = selectedChat.product;
-    chatStatus.textContent = selectedChat.status;
+// Select a chat
+function selectChat(chat) {
+    currentChat = chat;
     
-    // Display the price next to the product name
-    const chatProductInfo = document.getElementById('chat-product-info');
-    const chatPrice = document.getElementById('chat-price');
+    // Update header
+    const chatHeader = document.getElementById('chatHeader');
+    chatHeader.innerHTML = `
+        <img src="${chat.profilePic}" alt="${chat.username}">
+        <div class="chat-item-info">
+            <div class="chat-item-header">
+                <span class="username">${chat.username}</span>
+                <span class="price">${chat.price}</span>
+            </div>
+            <div class="item-name">${chat.item}</div>
+        </div>
+    `;
     
-    // Ensure the price is updated dynamically
-    chatPrice.textContent = selectedChat.price;
-
-    // Clear previous messages and load the new ones
-    chatMessagesSection.innerHTML = ''; 
-    selectedChat.messages.forEach(msg => {
-        const messageDiv = document.createElement('div');
-        messageDiv.classList.add(msg.sender === "You" ? 'message-you' : 'message-other');
-        messageDiv.textContent = msg.message;
-        chatMessagesSection.appendChild(messageDiv);
+    // Clear messages
+    document.getElementById('messages').innerHTML = '';
+    
+    // Display existing messages
+    displayMessages();
+    
+    // Update active chat in the list
+    document.querySelectorAll('.chat-item').forEach(item => {
+        item.classList.remove('active');
+        if (item.querySelector('.username').textContent === chat.username) {
+            item.classList.add('active');
+        }
     });
-
-    // Scroll to the bottom of the chat window
-    chatMessagesSection.scrollTop = chatMessagesSection.scrollHeight;
 }
 
-// Function to send a new message
+// Send a message
 function sendMessage() {
-    const newMessage = messageInput.value.trim();
-
-    if (newMessage) {
-        // Find the currently active chat
-        const currentChatIndex = chatData.findIndex(chat => chat.username === chatUsername.textContent);
-        const currentChat = chatData[currentChatIndex];
-
-        // Append the new message to the chat data
-        currentChat.messages.push({ sender: "You", message: newMessage });
-
-        // Add the new message to the chat window
-        const messageDiv = document.createElement('div');
-        messageDiv.classList.add('message-you');
-        messageDiv.textContent = newMessage;
-        chatMessagesSection.appendChild(messageDiv);
-
-        // Clear the input field
-        messageInput.value = '';
-
-        // Scroll to the latest message
-        chatMessagesSection.scrollTop = chatMessagesSection.scrollHeight;
+    if (!currentChat) return;
+    
+    const input = document.getElementById('messageInput');
+    const message = input.value.trim();
+    
+    if (message) {
+        // Add user message
+        currentChat.messages.push({
+            text: message,
+            sent: true,
+            timestamp: new Date()
+        });
+        
+        // Clear input
+        input.value = '';
+        
+        // Display messages
+        displayMessages();
+        
+        // Simulate reply after 1 second
+        setTimeout(() => {
+            const replies = [
+                "Thanks for your message!",
+                "Yes, the item is still available.",
+                "Would you like to make an offer?",
+                "I can meet tomorrow if that works for you.",
+                "The price is negotiable."
+            ];
+            
+            currentChat.messages.push({
+                text: replies[Math.floor(Math.random() * replies.length)],
+                sent: false,
+                timestamp: new Date()
+            });
+            
+            displayMessages();
+        }, 1000);
     }
 }
 
-// Load the chat list when the page loads
-window.onload = loadChatList;
+// Display messages
+function displayMessages() {
+    const messagesContainer = document.getElementById('messages');
+    messagesContainer.innerHTML = '';
+    
+    currentChat.messages.forEach(message => {
+        const messageDiv = document.createElement('div');
+        messageDiv.className = `message ${message.sent ? 'sent' : 'received'}`;
+        messageDiv.textContent = message.text;
+        messagesContainer.appendChild(messageDiv);
+    });
+    
+    // Scroll to bottom
+    messagesContainer.scrollTop = messagesContainer.scrollHeight;
+}
+
+// Initialize the chat interface
+initializeChatList();
+
+// Add enter key listener for sending messages
+document.getElementById('messageInput').addEventListener('keypress', (e) => {
+    if (e.key === 'Enter') {
+        sendMessage();
+    }
+});
