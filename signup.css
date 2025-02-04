@@ -1,0 +1,343 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* SIGN IN PAGE */
+/* Body and HTML Reset */
+html, body {
+    font-family: 'Inter', sans-serif;
+    background-color: #003049; 
+    display: block; /* Prevent flexbox from affecting layout */
+    width: 100vw; /* Ensure full width */
+    height: 100vh; /* Ensure full height */
+    color: #f1faee; 
+    overflow-x: hidden; /* Prevent horizontal scrolling */
+    overflow-y: auto; /* Allow vertical scrolling */
+    margin: 0;
+    padding: 0;
+}
+
+/* Logo Rectangle Background */
+.logo-container {
+    width: 100%; 
+    background-color: #fcbf49; 
+    padding: 10px 0; /* Reduced vertical padding */
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+    position: absolute; 
+    top: 0;
+    left: 0;
+    z-index: 10; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+}
+
+/* Header and Logo */
+header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+header img {
+    max-width: 180px; 
+    height: auto;
+}
+
+/* Sign-In Container */
+.signin-container {
+    background-color: #f1faee; 
+    padding: 4rem;
+    border-radius: 40px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+    width: 500px; 
+    text-align: center;
+    margin-top: 180px; /* Adjust spacing if needed */
+    z-index: 1;
+}
+
+
+
+h1 {
+    margin-bottom: 1.5rem;
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #003049; 
+}
+
+/* Input Group */
+fieldset {
+    border: none;
+    padding: 0;
+    margin-bottom: 1rem;
+    text-align: left;
+}
+
+legend {
+    font-size: 1rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    color: #003049; 
+}
+
+label {
+    display: block;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    color: #003049; 
+}
+
+input {
+    width: 100%;    
+    padding: 0.75rem;
+    border: 1px solid #ccc;
+    border-radius: 50px;
+    font-size: 1rem;
+    font-weight: 400;
+    border-radius:50px;
+    margin-bottom: 1rem;
+    color: #003049; 
+    background-color: #f8f9fa; 
+}
+
+input:focus {
+    border-color: #fcbf49; 
+    outline: none;
+}
+
+/* Button */
+button.btn {
+    background-color: #fcbf49; 
+    color: #003049; 
+    border: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: 5px;
+    font-size: 1rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    width: 100%;
+    border-radius: 50px;
+}
+
+button.btn:hover {
+    background-color: #e5a90e; 
+}
+
+/* SIGN UP PAGE */
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body and HTML Reset */
+html, body {
+    font-family: 'Inter', sans-serif;
+    background-color: #003049; 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    height: 100%;
+    color: #f1faee; 
+    overflow-x: hidden; 
+    overflow: hidden;
+}
+
+/* Logo Rectangle Background */
+.logo-container {
+    width: 100%; 
+    background-color: #fcbf49; 
+    padding: 10px 0;
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+    position: absolute; 
+    top: 0;
+    left: 0;
+    z-index: 10; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+}
+
+/* Header and Logo */
+header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+header img {
+    max-width: 180px; 
+    height: auto;
+}
+
+/* Sign-Up Container */
+.signup-container {
+    background-color: #f1faee;
+    padding: 3rem;
+    border-radius: 40px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+    width: 500px;
+    text-align: center;
+    margin-top: 80px; 
+    max-width: 100%; /* Prevent unwanted width issues */
+}
+
+
+/* Title Styling */
+h1 {
+    margin-bottom: 1.5rem;
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #003049; 
+}
+
+/* Input Group */
+fieldset {
+    border: none;
+    padding: 0;
+    margin-bottom: 1rem;
+    text-align: left;
+}
+
+legend {
+    font-size: 1rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    color: #003049; 
+}
+
+label {
+    display: block;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    color: #003049; 
+}
+
+input {
+    width: 100%;    
+    padding: 0.75rem;
+    border: 1px solid #ccc;
+    border-radius: 50px;
+    font-size: 1rem;
+    font-weight: 400;
+    margin-bottom: 1rem;
+    color: #003049; 
+    background-color: #f8f9fa; 
+}
+
+input:focus {
+    border-color: #fcbf49; 
+    outline: none;
+}
+
+/* Button */
+button.btn {
+    background-color: #fcbf49; 
+    color: #003049; 
+    border: none;
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    width: 100%;
+    border-radius: 50px;
+}
+
+button.btn:hover {
+    background-color: #e5a90e; 
+}
+
+/* Sign-In Text Link */
+.signin-text {
+    margin-top: 1rem;
+    font-size: 0.9rem;
+    font-weight: 400;
+    color: black;  
+}
+
+.signin-text a {
+    color: black; 
+    text-decoration: none;
+}
+
+.signin-text a:hover {
+    text-decoration: underline;
+}
+
+/* Password strength section */
+#password-strength-text {
+    font-size: 14px;
+    margin-top: 5px;
+    color: #666;
+}
+
+#password-strength-label {
+    font-weight: bold;
+    color: red;
+}
+
+/* Password strength progress bar */
+#password-strength-bar {
+    height: 4px;
+    width: 100%;
+    background-color: #ddd;
+    margin-top: 5px;
+    border-radius: 4px;
+    transition: width 0.3s ease-in-out;
+}
+
+.weak {
+    background-color: red;
+    width: 25%;
+}
+
+.medium {
+    background-color: orange;
+    width: 50%;
+}
+
+.strong {
+    background-color: green;
+    width: 100%;
+}
+
+/* Password requirements */
+#password-requirements {
+    list-style-type: none;
+    padding: 0;
+    margin-top: 5px;
+    font-size: 13px;
+    color: #666;
+}
+
+#password-requirements li {
+    padding-left: 20px;
+    position: relative;
+}
+
+#password-requirements li::before {
+    content: "•";
+    color: gray;
+    position: absolute;
+    left: 0;
+}
+
+.valid {
+    color: green;
+}
+
+.invalid {
+    color: red;
+}
+
+
+

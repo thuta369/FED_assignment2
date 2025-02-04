@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="listing.css">
+    <title>MokeSell | List Your Items</title>
+</head>
+<body>
+    <header>
+        <div class="left-nav">
+            <a href="#">Buy</a>
+            <a href="#">Sell</a>
+        </div>
+
+        <a href="homepage(after_login).html" class="logo-container">
+            <img src="mokesell_logo.png" alt="Mokesell Logo">
+        </a>
+
+        <div class="right-nav">
+            <a href="#"><i class="fas fa-bell"></i></a>
+            <a href="chats.html"><i class="fas fa-comment"></i></a>
+            <a href="favourites.html"><i class="fas fa-heart"></i></a>
+            <a href="#"><i class="fas fa-shopping-cart"></i></a>
+            <div class="user-profile">
+                <i class="fas fa-user-circle"></i>
+                <span>Name <i class="fas fa-caret-down"></i></span>
+            </div>
+        </div>
+        <div class="search-bar">
+            <input type="text" placeholder="Search">
+        </div>
+    </header>
+
+    <main>
+        <h1>LIST AN ITEM</h1>
+        <hr>
+        <div class="listing-form">
+            <div class="form-section">
+                <input type="text" placeholder="Item Name" class="form-input">
+                <textarea placeholder="Item Description" class="form-input"></textarea>
+                <input type="number" placeholder="Price" class="form-input">
+                <input type="text" placeholder="Category" class="form-input">
+            </div>
+            <div class="image-placeholder" onclick="document.getElementById('file-input').click();">
+                <p>Click to upload an image</p>
+                <input type="file" id="file-input" accept="image/*" style="display: none;" onchange="previewImage(event)">
+            </div>            
+        </div>
+        <button class="list-button" type="submit">LIST</button> 
+
+    </main>
+
+    <footer class="footer">
+        <div class="footer-section">
+            <h4>FOLLOW US</h4>
+            <p><i class="fab fa-instagram"></i> Instagram</p>
+            <p><i class="fab fa-facebook-f"></i> Facebook</p>
+            <p><i class="fab fa-twitter"></i> X</p>
+        </div>
+
+        <div class="footer-section">
+            <h4>PAYMENT</h4>
+            <div class="payment-icons">
+                <i class="fab fa-cc-visa"></i>
+                <i class="fab fa-cc-apple-pay"></i>
+                <i class="fab fa-cc-paypal"></i>
+            </div>
+        </div>
+
+        <div class="footer-section">
+            <h4>DELIVERY SERVICES</h4>
+            <div class="delivery-icons">
+                <i class="fas fa-shipping-fast"></i>
+                <i class="fas fa-truck"></i>
+                <i class="fas fa-box"></i>
+                <i class="fas fa-truck-loading"></i>
+                <i class="fas fa-warehouse"></i>
+            </div>
+        </div>
+
+        <div class="footer-section">
+            <h4>MOKESELL APP DOWNLOAD</h4>
+            <div class="app-download">
+                <div class="qr-code"></div>
+                <button class="app-store">App Store</button>
+            </div>
+        </div>
+
+       <div class="footer-bottom">
+            <p>&copy; 2025 Mokesell. All rights reserved</p>
+            <nav>
+                <a href="#">Help Center</a>
+                <span>&bull;</span>
+                <a href="#">Terms & Privacy</a>
+                <span>&bull;</span>
+                <a href="#">Contact Us</a>
+            </nav>
+        </div>
+    </footer>
+
+    <script src="listing.js"></script>
+</body>
+</html>

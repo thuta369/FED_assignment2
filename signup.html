@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="signup.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+    <title>Mokesell | Sign Up</title>
+    <style>
+        body {
+            overflow-y: auto; /* Enable vertical scrolling */
+        }
+    </style>
+</head>
+<body>
+    <!--Header section with logo-->
+    <header>
+        <div class="logo-container">
+            <img src="mokesell_logo.png" alt="Mokesell Logo">
+        </div>
+    </header>
+
+    <!-- Sign-Up Form Section -->
+    <section class="signup-container">
+        <h1>Sign Up</h1>
+        <form action="/register" method="POST">
+            <fieldset>
+                <legend>Account Details</legend>
+                <label for="name">Full Name</label>
+                <input type="text" id="name" name="name" placeholder="Enter your full name" required>
+                
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" placeholder="Enter your email" required>
+                
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" placeholder="Create a password" required>
+                <div id="password-strength-text">Password strength: <span id="password-strength-label">Weak</span></div>
+                <div id="password-strength-bar"></div>
+                <ul id="password-requirements">
+                    <li id="char-count" class="invalid">At least 8 characters</li>
+                    <li id="number-check" class="invalid">Contains a number</li>
+                    <li id="special-char-check" class="invalid">Contains a special character</li>
+                    <li id="uppercase-check" class="invalid">Contains an uppercase letter</li>
+                </ul>
+                <br>
+                
+                <label for="confirm-password">Confirm Password</label>
+                <input type="password" id="confirm-password" name="confirm-password" placeholder="Confirm your password" required>
+            </fieldset>
+            
+            <button type="submit" class="btn" formaction="homepage(after_login).html">Sign Up</button>
+            <p class="signin-text">Already have an account? <a href="signin.html">Sign In</a></p>
+        </form>
+    </section>
+
+    <script src="signup.js"></script>
+</body>
+</html>
