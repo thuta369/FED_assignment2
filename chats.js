@@ -57,16 +57,18 @@ function initializeChatList() {
 function selectChat(chat) {
     currentChat = chat;
     
-    // Update header
+    // Update header structure
     const chatHeader = document.getElementById('chatHeader');
     chatHeader.innerHTML = `
-        <img src="${chat.profilePic}" alt="${chat.username}">
-        <div class="chat-item-info">
-            <div class="chat-item-header">
-                <span class="username">${chat.username}</span>
-                <span class="price">${chat.price}</span>
+        <div class="chat-info">
+            <div class="user-details">
+                <img src="${chat.profilePic}" alt="${chat.username}">
+                <h2>${chat.username}</h2>
             </div>
-            <div class="item-name">${chat.item}</div>
+            <div class="item-details">
+                <span>${chat.item}</span>
+                <span style="color: red;">${chat.price}</span>
+            </div>
         </div>
     `;
     

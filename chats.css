@@ -6,6 +6,11 @@
 }
 
 /* Body Styling */
+html {
+    height: 100vh;
+    overflow: hidden;
+}
+
 body {
     font-family: 'Inter', sans-serif;
     background-color: white;
@@ -144,25 +149,15 @@ header {
     color: #555;
 }
 
+/* Chat Section */
 .chat-container {
     display: flex;
+    flex-direction: row;
     height: 100vh;
     width: 100%;
-    margin: 0;
-    background-color: white;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 /* Chat List Styles */
-.chat-header {
-    background-color: #003049; /* New color for chat header */
-    color: white;
-    padding: 15px;
-    border-bottom: 1px solid #e0e0e0;
-    display: flex;
-    align-items: center;
-}
-
 .chat-list {
     width: 350px;
     border-right: 1px solid #e0e0e0;
@@ -204,7 +199,7 @@ header {
 .chat-item-header {
     display: flex;
     justify-content: space-between;
-    margin-bottom: 5px;
+    margin-bottom: -1px;
 }
 
 .username {
@@ -212,41 +207,68 @@ header {
 }
 
 .price {
-    color: #1a73e8;
+    color: red;
 }
 
 .item-name {
-    color: #666;
+    color: black;
     font-size: 0.9em;
 }
 
 /* Chat Window Styles */
 .chat-window {
-    flex-grow: 1;
     display: flex;
     flex-direction: column;
+    flex-grow: 1;
+    height: 100vh;
 }
 
+/* Chat Header */
 .chat-header {
+    background-color: #003049;
+    color: white;
     padding: 15px;
     border-bottom: 1px solid #e0e0e0;
     display: flex;
     align-items: center;
-}
-
-.chat-header img {
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    margin-right: 15px;
-}
-
-.no-chat-selected {
-    color: #666;
-    text-align: center;
     width: 100%;
 }
 
+.chat-info {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.user-details {
+    display: flex;
+    align-items: center;
+    gap: 10px; /* Adds spacing between image and text */
+}
+
+.user-details img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+
+.user-details h2 {
+    font-size: 25px;
+    font-weight: bold;
+    margin: 0;
+}
+
+.item-details {
+    display: flex;
+    justify-content: space-between;
+    width: 97%;
+    font-size: 15px;
+    color: #ccc;
+    margin-left: 50px;
+    margin-top: -11px; /* Adds space between username and item details */
+}
+
+/* Messages */
 .messages {
     flex-grow: 1;
     padding: 20px;
@@ -264,7 +286,7 @@ header {
 
 .message.sent {
     float: right;
-    background-color: #1a73e8;
+    background-color: #003049;
     color: white;
 }
 
@@ -273,11 +295,15 @@ header {
     background-color: white;
 }
 
+/* Message Input */
 .message-input {
-    padding: 20px;
+    padding: 15px;
     border-top: 1px solid #e0e0e0;
     display: flex;
     gap: 10px;
+    background-color: white;
+    position: sticky;
+    bottom: 0;
 }
 
 .message-input input {
@@ -290,7 +316,7 @@ header {
 
 .message-input button {
     padding: 10px 20px;
-    background-color: #1a73e8;
+    background-color: #003049;
     color: white;
     border: none;
     border-radius: 20px;
@@ -298,5 +324,5 @@ header {
 }
 
 .message-input button:hover {
-    background-color: #1557b0;
+    background-color: #00557a; 
 }
