@@ -72,7 +72,33 @@ This platform enables **sellers** to list products for sale and **buyers** to br
 
 ---
 
-## 📹 **Demo & Additional Resources**  
-🎥 **Video Walkthrough:** [Google Drive Link](https://drive.google.com/drive/folders/1YeyLz6gSkmfGvlkosGwtwu8FOXLmMqih?usp=drive_link)  
+## 📡 **API Routes**  
+
+### **Authentication Routes (/api/auth)**  
+🔹 **POST /api/auth/register** - Register a new user  
+🔹 **POST /api/auth/login** - Login user  
+
+### **Product Routes (/api/products)**  
+🔹 **GET /api/products** - Get all products (with optional category and search filters)  
+🔹 **POST /api/products** - Create new product (authenticated)  
+🔹 **GET /api/products/my-listings** - Get seller's products (authenticated)  
+🔹 **DELETE /api/products/:id** - Delete a product (authenticated)  
+
+### **Chat Routes (/api/chat)**  
+🔹 **POST /api/chat/start** - Start a new chat (authenticated)  
+🔹 **GET /api/chat** - Get all chats for a user (authenticated)  
+🔹 **GET /api/chat/:chatId** - Get messages for a specific chat (authenticated)  
+🔹 **POST /api/chat/message** - Send a new message (authenticated)  
+
+### **Order Routes (/api/orders)**  
+🔹 **POST /api/orders** - Create new order (authenticated)  
+
+### **Voucher Routes (/api/vouchers)**  
+🔹 **POST /api/vouchers** - Create new voucher (authenticated)  
+🔹 **GET /api/vouchers** - Get user's vouchers (authenticated)  
+🔹 **POST /api/vouchers/:id/use** - Use a voucher (authenticated)  
 
 ---
+
+## 📹 **Demo & Additional Resources**  
+🎥 **Video Walkthrough:** [Google Drive Link](https://drive.google.com/drive/folders/1YeyLz6gSkmfGvlkosGwtwu8FOXLmMqih?usp=drive_link)  
