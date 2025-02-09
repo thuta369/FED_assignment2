@@ -62,6 +62,12 @@ MokeSell is an **online marketplace** designed for users to **buy and sell secon
 ✅ **JSON Web Tokens (JWT)** used for secure authentication.  
 ✅ **bcrypt** implemented for **password hashing**.  
 
+### Link to the VIDEO Presentation
+https://drive.google.com/drive/folders/1YeyLz6gSkmfGvlkosGwtwu8FOXLmMqih?usp=drive_link
+
+### GITHUB PAGE LINK
+https://github.com/thuta369/FED_assignment2
+
 
 
 
