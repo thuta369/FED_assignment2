@@ -1,0 +1,259 @@
+/* General Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f6f9;
+    margin: 0;
+    padding: 0;
+}
+
+/* Header Section */
+.header {
+    text-align: center;
+    background-color: #ffd75e;
+    padding: 50px 20px;
+    color: #003049;
+}
+
+.header h1 {
+    font-size: 2rem;
+    margin-bottom: 15px;
+}
+
+/* Logo Styling */
+.logo {
+    font-size: 2.5rem;
+    font-weight: bolder;
+    color: #003049; /* Dark Blue for a Professional Look */
+    margin-bottom: 10px;
+    text-decoration: none;
+}
+
+/* Contact Container */
+.contact-container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 40px;
+    padding: 40px 10%;
+}
+
+/* Left Side: Contact Info */
+.contact-info {
+    max-width: 400px;
+}
+
+.contact-info h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.contact-info p {
+    font-size: 16px;
+    line-height: 1.6;
+    color: #555;
+}
+
+.contact-details p {
+    background: #fff;
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+    margin-bottom: 10px;
+}
+
+/* Right Side: Contact Form */
+.contact-form {
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+    width: 400px;
+    margin-top: 20px;
+}
+
+.contact-form label {
+    font-weight: bold;
+    display: block;
+    margin-top: 15px;
+    color: #333;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.contact-form textarea {
+    resize: vertical;
+}
+
+/* Button */
+.btn {
+    display: inline-block;
+    width: 100%;
+    padding: 12px;
+    font-size: 16px;
+    font-weight: bold;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    background: #003049; /* Dark blue */
+    color: white;
+    margin-top: 20px;
+    transition: background 0.3s ease-in-out;
+}
+
+.btn:hover {
+    background: #00506b; /* Slightly lighter blue */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .contact-container {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .contact-form {
+        width: 100%;
+    }
+}
+
+/* Footer Styles */
+.footer {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    padding: 20px;
+    background-color: #ffd75e;
+    color: #003049;
+}
+
+.footer-section h4 {
+    font-size: 15px;
+    margin-bottom: 10px;
+}
+
+.footer-section p,
+.footer-section a {
+    margin: 5px 0;
+}
+
+.footer-section .payment-icons,
+.footer-section .delivery-icons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.footer-section .icon {
+    width: 40px;
+    height: 20px;
+    background-color: white;
+    border-radius: 5px;
+}
+
+.footer-bottom {
+    grid-column: 1 / -1;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
+    border-top: 1px solid #003049;
+    padding-top: 10px;
+    font-size: 12px;
+}
+
+.footer-bottom nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.footer-bottom a {
+    text-decoration: none;
+    color: #003049;
+}
+
+.footer-bottom a:hover {
+    text-decoration: underline;
+}
+
+.payment-icons img {
+    max-width: 40px; /* Set maximum width */
+    max-height: 30px; /* Set maximum height */
+    height: auto; /* Maintain aspect ratio */
+    object-fit: contain;
+    margin: 5px;
+}
+
+.delivery-icons img {
+    max-width: 80px; /* Set maximum width */
+    max-height: 50px; /* Set maximum height */
+    height: auto; /* Maintain aspect ratio */
+    object-fit: contain;
+    margin: 5px;
+}
+
+/* Responsive Breakpoints */
+@media screen and (max-width: 768px) {
+    /* Adjust header for smaller screens */
+    .header-top {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .left-nav,
+    .right-nav {
+        justify-content: center;
+    }
+
+    .logo-container img {
+        max-width: 120px; /* Smaller logo for mobile screens */
+    }
+
+    /* Reduce padding on smaller screens */
+    .ad-layout {
+        padding: 10px;
+    }
+
+    /* Footer Adjustments */
+    .footer {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    /* Adjust font sizes for very small screens */
+    .left-nav a,
+    .right-nav a {
+        font-size: 16px;
+    }
+
+    .right-nav button {
+        font-size: 12px;
+        padding: 6px 12px;
+    }
+
+    .grid {
+        gap: 10px;
+    }
+
+    .footer-bottom {
+        font-size: 12px;
+    }
+
+    .arrow {
+        width: 25px;
+        height: 25px;
+        font-size: 1.2rem;
+    }
+}

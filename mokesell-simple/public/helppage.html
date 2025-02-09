@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <title>Mokesell | Help Center</title>
+    <link rel="stylesheet" href="helppage.css">
+</head>
+<body>
+    
+    <!-- Header Section -->
+    <div class="header">
+        <a href="index.html" class="logo">mokesell</a>
+        <h2>How can we help you?</h2>
+        <div class="search-bar">
+            <input type="text" placeholder="Search for answers...">
+        </div>
+    </div>
+    
+    <!-- Support Options -->
+    <div class="support-options">
+        <div class="support-box">
+            <h3>Live Chat Support</h3>
+            <p>Available 24/7 for your questions</p>
+        </div>
+        <div class="support-box">
+            <h3>Documentation</h3>
+            <p>Browse our detailed guides</p>
+        </div>
+        <div class="support-box">
+            <h3>Email Support</h3>
+            <p>Get help within 24 hours</p>
+        </div>
+    </div>
+    
+    <!-- FAQ Section -->
+    <div class="faq-container">
+        <h2>Frequently Asked Questions</h2>
+        
+        <div class="faq-item" onclick="toggleFAQ(1)">
+            <h3>How do I get started?</h3>
+            <p id="faq1">You can create an account and start listing or buying items immediately.</p>
+        </div>
+        
+        <div class="faq-item" onclick="toggleFAQ(2)">
+            <h3>What payment methods do you accept?</h3>
+            <p id="faq2">We accept credit cards, PayPal, and bank transfers.</p>
+        </div>
+        
+        <div class="faq-item" onclick="toggleFAQ(3)">
+            <h3>How can I reset my password?</h3>
+            <p id="faq3">Go to the login page and click "Forgot Password?" to receive a reset link.</p>
+        </div>
+    
+        <div class="faq-item" onclick="toggleFAQ(4)">
+            <h3>Is there a fee to use this platform?</h3>
+            <p id="faq4">Creating an account is free, but we charge a small fee for certain transactions.</p>
+        </div>
+    
+        <div class="faq-item" onclick="toggleFAQ(5)">
+            <h3>How do I contact customer support?</h3>
+            <p id="faq5">You can reach us via email at support@example.com or through our live chat feature.</p>
+        </div>
+    
+        <div class="faq-item" onclick="toggleFAQ(6)">
+            <h3>Can I change my username?</h3>
+            <p id="faq6">Usernames cannot be changed after registration for security reasons.</p>
+        </div>
+    
+        <div class="faq-item" onclick="toggleFAQ(7)">
+            <h3>How long does shipping take?</h3>
+            <p id="faq7">Shipping times vary depending on the seller, but typically range from 3-7 business days.</p>
+        </div>
+    
+        <div class="faq-item" onclick="toggleFAQ(8)">
+            <h3>Do you offer refunds?</h3>
+            <p id="faq8">Refund policies depend on the seller. Please check their return policy before making a purchase.</p>
+        </div>
+    
+        <div class="faq-item" onclick="toggleFAQ(9)">
+            <h3>How do I report a fraudulent listing?</h3>
+            <p id="faq9">You can report suspicious listings by clicking the "Report" button on the item page.</p>
+        </div>
+    
+        <div class="faq-item" onclick="toggleFAQ(10)">
+            <h3>Can I delete my account?</h3>
+            <p id="faq10">Yes, you can request account deletion by contacting support.</p>
+        </div>
+    </div>
+    
+    <!-- Still Need Help Section -->
+    <div class="help-section">
+        <h2>Still need help?</h2>
+        <p>Our support team is just a click away</p>
+        <button>📞 Contact Support</button>
+        <button class="secondary">📧 Send Email</button>
+    </div>
+
+    <!-- AI Chat Icon -->
+    <div class="chat-icon" onclick="toggleChat()">💬</div>
+
+    <!-- AI Chat Box -->
+    <div class="chatbox" id="chatbox">
+        <div class="chatbox-header">
+            AI Chat Assistant
+            <span class="close-btn" onclick="toggleChat()">✖</span>
+        </div>
+        <div class="chatbox-messages" id="chatbox-messages">
+            <div class="ai-message">Hello! How can I assist you today?</div>
+        </div>
+        <div class="chatbox-input">
+            <input type="text" id="chatbox-input" placeholder="Ask me anything..." onkeypress="handleEnter(event)">
+            <button onclick="sendMessage()">➤</button>
+        </div>
+    </div>
+
+    <!-- Footer Section -->
+    <footer class="footer">
+        <div class="footer-section">
+            <h4>FOLLOW US</h4>
+            <p><img src="images/instagramlogo.png" alt="Instagram" width="20"> Instagram</p>
+            <p><img src="images/facebooklogo.png" alt="Facebook" width="20"> Facebook</p>
+            <p><img src="images/X-Logo.png" alt="X" width="20"> X</p>
+        </div>
+    
+        <div class="footer-section">
+            <h4>PAYMENT</h4>
+            <div class="payment-icons">
+                <img src="images/visalogo.png" alt="Visa">
+                <img src="images/paypal-logo.png" alt="PayPal">
+                <img src="images/applepaylogo.png" alt="Apple Pay">
+                <img src="images/googlepaylogo.png" alt="Google Pay">
+            </div>
+        </div>
+        
+    
+        <div class="footer-section">
+            <h4>DELIVERY SERVICES</h4>
+            <div class="delivery-icons">
+                <img src="images/j&texpresslogo.webp" alt="J&T Express">
+                <img src="images/singaporepostlogo.png" alt="Singapore Post">
+                <img src="images/ninjavanlogo.png" alt="Ninja Van">
+                <img src="images/dhl-logo.png" alt="DHL">
+            </div>
+        </div>
+    
+        <div class="footer-bottom">
+            <p>&copy; 2025 MokeSell. All rights reserved</p>
+            <nav>
+                <a href="helppage.html">Help Center</a>
+                <span>&bull;</span>
+                <a href="#">Terms & Privacy</a>
+                <span>&bull;</span>
+                <a href="contactus.html">Contact Us</a>
+            </nav>
+        </div>
+    </footer>
+    
+    <script src="helppage.js"></script>
+</body>
+</html>
