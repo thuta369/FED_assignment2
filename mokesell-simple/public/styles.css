@@ -42,6 +42,16 @@ body {
     box-shadow: 0 4px 6px rgba(0,0,0,0.1);
 }
 
+/* Chat Icon Styling */
+.chat-icon {
+    font-size: 18px;
+    color: #003049;
+    cursor: pointer;
+    position: relative;
+    margin-left: 1px; /* Space between cart and chat */
+    padding: 5px;
+}
+
 /* Target buttons inside the modal only */
 #cartModal .modal-content .btn {
     display: inline-block;
@@ -151,6 +161,7 @@ body {
     position: relative;
     cursor: pointer;
     padding: 5px;
+    color: #003049;
 }
 
 .cart-count {

@@ -1,0 +1,219 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #FFF8E1;  /* Soft Beige */
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Chat Container - Full Screen */
+.chat-container {
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+    background: #FFF8E1; /* Soft Beige */
+    overflow: hidden;
+}
+
+/* Sidebar */
+.sidebar {
+    width: 30%;
+    background: #FFD75E; /* Warm Yellow */
+    padding: 15px;
+    overflow-y: auto;
+}
+
+/* Mokesell Logo */
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: #003049; /* Deep Blue */
+    cursor: pointer;
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+/* Search Bar */
+.search-bar {
+    width: 100%;
+    padding: 10px;
+    border-radius: 30px;
+    border: 1px solid white;
+    margin-bottom: 10px;
+    background: #FFF2D5; /* Light Cream */
+    color: #003049; /* Deep Blue */
+}
+
+.placeholder {
+    font-size: 16px;
+    color: white;
+    text-align: center;
+    margin-top: 20px;
+    opacity: 0.7;
+}
+
+/* Chat List */
+.chat-list {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Chat Items */
+.chat-item {
+    display: flex;
+    align-items: center;
+    padding: 15px;
+    border-bottom: 1px solid #E0B12D;
+    cursor: pointer;
+    transition: 0.3s;
+    background: transparent;
+    color: #003049; /* Deep Blue */
+}
+
+.chat-item:hover {
+    background: #FFE082; /* Soft Yellow Tint */
+}
+
+/* Profile Picture Styling */
+.profile-pic {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right: 10px;
+}
+
+.chat-details {
+    flex: 1;
+}
+
+.item-details {
+    display: flex;
+    align-items: center;
+    margin-top: 5px;
+    font-size: 12px;
+    color: #003049; /* Deep Blue */
+}
+
+.item-pic {
+    width: 30px;
+    height: 30px;
+    border-radius: 5px;
+    margin-right: 5px;
+}
+
+/* Chat Window */
+.chat-window {
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    background: #FFF8E1; /* Soft Beige */
+}
+
+/* Chat Header */
+.chat-header {
+    display: flex;
+    align-items: center;
+    padding: 15px;
+    background: white; /* Slightly Darker Yellow */
+    height: 70px;
+}
+
+/* Profile picture in chat header */
+#chat-pic {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right: 10px;
+    display: block;
+}
+
+/* Chat Title and Item Details */
+.chat-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    overflow: hidden;
+    color: #003049; /* Deep Blue */
+}
+
+/* Chat Messages */
+.chat-messages {
+    flex: 1;
+    padding: 15px;
+    overflow-y: auto;
+    background: #003049;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    height: calc(100vh - 130px);
+}
+
+/* Message bubbles */
+.message {
+    padding: 12px 18px;
+    border-radius: 20px;
+    max-width: 70%;
+    font-size: 14px;
+    line-height: 1.4;
+    word-wrap: break-word;
+    display: inline-block;
+    animation: fadeIn 0.3s ease-in-out;
+}
+
+/* Sent Messages (Your Messages) */
+.sent {
+    background: #FFB74D; /* Light Orange */
+    align-self: flex-end;
+    text-align: right;
+    color: #003049; /* Deep Blue */
+}
+
+/* Received Messages */
+.received {
+    background: #FFFFFF;
+    align-self: flex-start;
+    color: #003049; /* Deep Blue */
+}
+
+/* Chat Input */
+.chat-input {
+    display: flex;
+    padding: 12px;
+    background: white; /* Smooth Yellow */
+    gap: 10px;
+    align-items: center;
+    height: 60px;
+}
+
+/* Input Field */
+.chat-input input {
+    flex: 1;
+    padding: 14px;
+    border: 1px solid #003049;
+    border-radius: 25px;
+    font-size: 16px;
+    background: #FFF2D5;
+    color: #003049; /* Deep Blue */
+}
+
+/* Send Button */
+.chat-input button {
+    padding: 12px 15px;
+    border: none;
+    background: #003049; 
+    color: #fff;
+    cursor: pointer;
+    border-radius: 50%;
+    font-size: 16px;
+    transition: background 0.3s ease-in-out;
+}
+

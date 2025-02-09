@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mokesell | Chat</title>
+    <link rel="stylesheet" href="chats.css">
+</head>
+<body>
+    <div class="chat-container">
+        <!-- Sidebar -->
+        <div class="sidebar">
+            <h2 class="logo" onclick="goToHome()">mokesell</h2>
+            <input type="text" class="search-bar" placeholder="Search messages...">
+            <div class="chat-list">
+                <div class="chat-item" onclick="openChat('Sarah Chen', 'images/sarah.jpg', 'Vintage Camera', '$120')">
+                    <img src="images/sarah.jpg" class="profile-pic">
+                    <div class="chat-details">
+                        <strong>Sarah Chen</strong>
+                        <p>Is this still available?</p>
+                        <div class="item-details">
+                            <img src="images/vintage-camera.jpeg" class="item-pic">
+                            <span>Vintage Camera - $120</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="chat-item" onclick="openChat('Mike Johnson', 'images/mikejohnson.jpg', 'Gaming Console', '$299')">
+                    <img src="images/mikejohnson.jpg" class="profile-pic">
+                    <div class="chat-details">
+                        <strong>Mike Johnson</strong>
+                        <p>Great! I can meet tomorrow</p>
+                        <div class="item-details">
+                            <img src="images/gaming-console.jpg" class="item-pic">
+                            <span>Gaming Console - $299</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="chat-item" onclick="openChat('Emma Wilson', 'images/emmawilson.jpg', 'Leather Bag', '$60')">
+                    <img src="images/emmawilson.jpg" class="profile-pic">
+                    <div class="chat-details">
+                        <strong>Emma Wilson</strong>
+                        <p>Can you do $50?</p>
+                        <div class="item-details">
+                            <img src="images/leather-bag.jpg" class="item-pic">
+                            <span>Leather Bag - $60</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="chat-item" onclick="openChat('John Carter', 'images/johncarter.jpg', 'Smart Watch', '$199')">
+                    <img src="images/johncarter.jpg" class="profile-pic">
+                    <div class="chat-details">
+                        <strong>John Carter</strong>
+                        <p>Does it come with the charger?</p>
+                        <div class="item-details">
+                            <img src="images/smart-watch.jpg" class="item-pic">
+                            <span>Smart Watch - $199</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Chat Window -->
+        <div class="chat-window">
+            <div class="chat-header">
+                <img id="chat-pic">
+                <div class="chat-info">
+                    <h3 id="chat-title">Select a chat</h3>
+                    <span id="item-info"></span> <!-- This will only show text now -->
+                </div>
+            </div>            
+            <div class="chat-messages" id="chat-messages">
+                <p class="placeholder">Click a chat to start messaging</p>
+            </div>
+            <div class="chat-input">
+                <input type="text" id="messageInput" placeholder="Type a message..." onkeypress="handleKeyPress(event)">
+                <button onclick="sendMessage()">➤</button>
+            </div>
+        </div>
+
+
+    </div>
+
+    <script src="chats.js"></script>
+</body>
+</html>
